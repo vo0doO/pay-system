@@ -8,3 +8,5 @@ addon-manifest.json
 workspace.code-workspace
 heroku_setup_hook.sh
 */*.log/**
+vui/**
+toxin/**
