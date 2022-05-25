@@ -3,8 +3,8 @@ import logging.config
 from wsgiref.util import request_uri
 
 from pkg_resources import get_entry_map
-from webapp.utils.PaySystemsPrice import PaySystemsPrice
-from webapp.settings.logging import LOGGING
+from utils.PaySystemsPrice import PaySystemsPrice
+from settings.logging import LOGGING
 from flask import Flask, make_response, render_template, ctx, render_template_string, request, redirect, url_for, jsonify
 
 
@@ -12,7 +12,7 @@ logging.config.dictConfig(LOGGING)
 l = logging.getLogger("my_logger")
 
 
-app = Flask(__name__, static_url_path="/webapp/static", static_folder="pay-systems/webapp/static")
+app = Flask(__name__, template_folder="templates", static_url_path="/static", static_folder="static")
 
 
 @app.route("/", methods=["GET"])

@@ -1,13 +1,12 @@
-from operator import ge
 import time, datetime
 from utils.koronapay import koronapay
 from utils.unistream import unistream
 from utils.contact import contact
 from subprocess import getoutput
-from flask import request
-from webapp.settings.logging import LOGGING
+import logging
+from settings.logging import LOGGING
 import logging.config
-from collections import OrderedDict
+
 
 logging.config.dictConfig(LOGGING)
 l = logging.getLogger("my_logger")

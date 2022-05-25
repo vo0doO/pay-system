@@ -2,8 +2,9 @@
 */.vscode/**
 */.venv/**
 */__pycache__/**
-github.githubassets.com/
+**/github.githubassets.com/**
 heroku_setup_hook.sh
 addon-manifest.json
 workspace.code-workspace
 heroku_setup_hook.sh
+*/*.log/**
