@@ -1,15 +1,17 @@
 import time, datetime
+
+from flask import request
 from utils.koronapay import koronapay
 from utils.unistream import unistream
 from utils.contact import contact
 from subprocess import getoutput
-import logging
-from settings.logging import LOGGING
-import logging.config
+# import logging
+# from settings.logging import LOGGING
+# import logging.config
 
 
-logging.config.dictConfig(LOGGING)
-l = logging.getLogger("my_logger")
+# logging.config.dictConfig(LOGGING)
+# l = logging.getLogger("my_logger")
 
 class PaySystemsPrice:
     """Класс имеющий методы для возвращаюшие стоимость
@@ -90,7 +92,7 @@ class PaySystemsPrice:
                     "hour": datetime.datetime.now().utcnow().hour,
                     "minute": datetime.datetime.now().utcnow().minute,
                 }
-                l.info("Hello")
+
                 if (self.system == "contact"):
                     prices = dict(eval(getoutput(self.command())))["result"]
                     for item in prices:

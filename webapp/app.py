@@ -1,15 +1,15 @@
 import os
-import logging.config
+# import logging.config
 from wsgiref.util import request_uri
 
 from pkg_resources import get_entry_map
 from utils.PaySystemsPrice import PaySystemsPrice
-from settings.logging import LOGGING
+# from settings.logging import LOGGING
 from flask import Flask, make_response, render_template, ctx, render_template_string, request, redirect, url_for, jsonify
 
 
-logging.config.dictConfig(LOGGING)
-l = logging.getLogger("my_logger")
+# logging.config.dictConfig(LOGGING)
+# l = logging.getLogger("my_logger")
 
 
 app = Flask(__name__, template_folder="templates", static_url_path="/static", static_folder="static")
@@ -55,7 +55,7 @@ def get_user_ip():
             client_ip = request.headers["X-Forwarded-For"]
         else:
             client_ip = ""
-        l.info(f"{client_ip}")
+        # l.info(f"{client_ip}")
         return redirect(request.url)
         
 @app.route("/test")

@@ -1,5 +1,4 @@
 import time
-import webapp.ColorStreamHandler
 DEBUG = True 					# Whether or not to show DEBUG level messages
 INFO = True
 USE_COLORS = True 				# Whether or not colors should be used when outputting text
