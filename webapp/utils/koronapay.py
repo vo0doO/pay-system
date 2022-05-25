@@ -1,4 +1,4 @@
-def koronapay(country_dest= "KAZ", country_src="RUS", currency_src_id=810, currency_dest_id=840, amount=1000):
+def koronapay(country_src, currency_src_id, country_dest, currency_dest_id, amount):
     return f"""curl -s 'https://koronapay.com/transfers/online/api/transfers/tariffs?sendingCountryId={country_src}&sendingCurrencyId={currency_src_id}&receivingCountryId={country_dest}&receivingCurrencyId={currency_dest_id}&paymentMethod=debitCard&receivingAmount={amount}&receivingMethod=cash&paidNotificationEnabled=true' \
       -H 'authority: koronapay.com' \
       -H 'accept: application/vnd.cft-data.v2.82+json' \

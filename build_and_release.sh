@@ -16,5 +16,5 @@ build_image_on_heroku() {
     bash -c "heroku container:push web"
     return
 }
-
+# heroku container:push web && heroku container:release web
 build_image_on_heroku && release_on_heroku
