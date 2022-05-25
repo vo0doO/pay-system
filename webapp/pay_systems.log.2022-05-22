@@ -1,0 +1,19 @@
+[2022-05-22 06:52:28,897] INFO::(P:17001 T:139816486303488)::get_command - b'Hello'
+[2022-05-22 06:52:30,460] INFO::(P:17001 T:139816486303488)::get_command - b'Hello'
+[2022-05-22 06:52:31,866] INFO::(P:17001 T:139816486303488)::get_command - b'Hello'
+[2022-05-22 19:51:03,286] WARNING::(P:4057 T:139998329755392)::app - 'module' object is not callable
+[2022-05-22 19:56:47,205] WARNING::(P:4288 T:139808994854656)::app - 'module' object is not callable
+[2022-05-22 19:57:11,478] WARNING::(P:4434 T:139634966722304)::app - 'module' object is not callable
+[2022-05-22 20:24:27,622] WARNING::(P:6768 T:139833649248000)::app - 'Response' object has no attribute 'find'
+[2022-05-22 20:28:11,503] WARNING::(P:7114 T:139712632805120)::app - name 'system_idx' is not defined
+[2022-05-22 21:01:01,421] WARNING::(P:9780 T:139971810539264)::app - url_for() takes 1 positional argument but 7 were given
+[2022-05-22 22:34:49,394] INFO::(P:19940 T:139789508540160)::PaySystemsPrice - Hello
+[2022-05-22 22:37:46,330] INFO::(P:20184 T:140692839126784)::PaySystemsPrice - Hello
+[2022-05-22 22:38:31,680] INFO::(P:20348 T:140241820186368)::PaySystemsPrice - Hello
+[2022-05-22 22:39:50,920] INFO::(P:20496 T:140697751512832)::PaySystemsPrice - Hello
+[2022-05-22 22:41:32,598] INFO::(P:20683 T:140562903439104)::PaySystemsPrice - Hello
+[2022-05-22 22:41:50,148] INFO::(P:20881 T:140355303372544)::PaySystemsPrice - Hello
+[2022-05-22 22:42:13,205] INFO::(P:21029 T:140108489074432)::PaySystemsPrice - Hello
+[2022-05-22 22:42:24,145] INFO::(P:21162 T:140063860520704)::PaySystemsPrice - Hello
+[2022-05-22 22:43:27,491] INFO::(P:21314 T:139755272881920)::PaySystemsPrice - Hello
+[2022-05-22 22:45:00,899] INFO::(P:21497 T:139912063670016)::PaySystemsPrice - Hello
