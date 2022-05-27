@@ -4,8 +4,8 @@ from wsgiref.util import request_uri
 
 from pkg_resources import get_entry_map
 from utils.PaySystemsPrice import PaySystemsPrice
-from settings.log import LOGGING
-from flask import Flask, make_response, render_template, ctx, render_template_string, request, redirect, url_for, jsonify
+from settings import LOGGING
+from flask import Flask, render_template, ctx, render_template_string, request, redirect, url_for, jsonify
 
 
 # logging.config.dictConfig(LOGGING)
@@ -14,6 +14,7 @@ from flask import Flask, make_response, render_template, ctx, render_template_st
 
 psa = Flask('psa/psa', template_folder="psa/templates", static_url_path="/static", static_folder="psa/static")
 
+# l.info("Im Ready !")
 
 @psa.route("/", methods=["GET"])
 def index():

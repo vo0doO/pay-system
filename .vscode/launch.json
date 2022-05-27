@@ -23,7 +23,9 @@
             "name": "Node",
             "request": "launch",
             "restart": true,
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/npx",
+            "localRoot": "${workspaceFolderBasename}/vui/",
+            "program": "${workspaceFolder}/vui/",
+            "runtimeExecutable": "${workspaceFolderBasename}/vui/node_modules/.bin/npx",
             "runtimeArgs": [
                 "webpack",
                 "serve",

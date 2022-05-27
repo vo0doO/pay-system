@@ -20,6 +20,7 @@ class PaySystemsPrice:
     
     Для успешнго получения цены необходимо
     сформировать строку запроса из параместров:
+        @system_idx: Система для отправления ["contact", "unistream", "koronapay"]
         @country_dst: Страна получения ["KAZ", "RUS", "UZB"]
         @country_src: Страна отправиления ["KAZ", "RUS", "UZB"]
         @currency_src: Валюта отправления S или Р
