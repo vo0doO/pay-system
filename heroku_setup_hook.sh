@@ -4,7 +4,7 @@
 
 # heroku create -n &&\
 
-TRIGGER_APP="https://thawing-ravine-19753.herokuapp.com/"
+TRIGGER_APP="https://pay-systems.herokuapp.com/"
 
 heroku webhooks:add \
     --include api:release \

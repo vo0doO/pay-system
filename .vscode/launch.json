@@ -2,12 +2,42 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "console": "integratedTerminal",
+            "type": "chrome",
+            "request": "launch",
+            "name": "LaunchChrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "console": "integratedTerminal",
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "name": "Node",
+            "request": "launch",
+            "restart": true,
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/npx",
+            "runtimeArgs": [
+                "webpack",
+                "serve",
+                "--stats-children",
+                "--stats-error-details"
+            ],
+        },
+        {
             "name": "Python: Flask",
             "type": "python",
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "webapp/app",
+                "FLASK_APP": "psa/psa",
                 "FLASK_ENV": "development"
             },
             "args": [
@@ -16,47 +46,6 @@
             ],
             "jinja": true,
             "justMyCode": true
-        },
-        {
-            "name": "Python: Модуль",
-            "type": "python",
-            "request": "launch",
-            "module": "flask",
-            "justMyCode": true
-        },
-        {
-            "type": "pwa-msedge",
-            "name": "Launch Microsoft Edge",
-            "request": "launch",
-            "runtimeArgs": [
-                "--remote-debugging-port=9222"
-            ],
-            "url": "http://localhost:5000",
-            "presentation": {
-                "hidden": true
-            }
-        },
-        {
-            "type": "pwa-msedge",
-            "name": "Launch Microsoft Edge in headless mode",
-            "request": "launch",
-            "runtimeArgs": [
-                "--headless",
-                "--remote-debugging-port=9222"
-            ],
-            "url": "c:\\Users\\vo0\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.0.0\\out\\startpage\\index.html",
-            "presentation": {
-                "hidden": true
-            }
-        },
-        {
-            "type": "vscode-edge-devtools.debug",
-            "name": "Open Edge DevTools",
-            "request": "attach",
-            "url": "http://localhost:5000",
-            "presentation": {
-                "hidden": true
-            }
         },
         {
             "type": "chrome",
@@ -70,6 +59,13 @@
     ],
     "compounds": [
         {
+            "name": "Npm ==>> Chrome",
+            "configurations": [
+                "NpmStart",
+                "LaunchChrome"
+            ]
+        },
+        {
             "name": "Launch Edge Headless and attach DevTools",
             "configurations": [
                 "Launch Microsoft Edge in headless mode",
@@ -82,6 +78,6 @@
                 "Launch Microsoft Edge",
                 "Open Edge DevTools"
             ]
-        }
+        },
     ]
 }

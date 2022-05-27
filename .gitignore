@@ -8,5 +8,6 @@ heroku_setup_hook.sh
 */*.log/**
 .venv/
 **/github.githubassets.com/**
-vui/**
 toxin/**
+*/node_modules/**
+*/.package-lock.json/**
