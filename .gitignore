@@ -11,3 +11,4 @@ heroku_setup_hook.sh
 toxin/**
 */node_modules/**
 */.package-lock.json/**
+vui/**
