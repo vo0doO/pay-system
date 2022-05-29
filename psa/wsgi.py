@@ -1,1 +1,1 @@
-from psa.psa import psa as application
+from psa import psa as application
