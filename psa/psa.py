@@ -12,7 +12,7 @@ from flask import Flask, render_template, ctx, render_template_string, request, 
 # l = logging.getLogger("my_logger")
 
 
-psa = Flask('psa/psa', template_folder="templates", static_url_path="/static", static_folder="static")
+psa = Flask(__name__, template_folder="templates", static_url_path="/static", static_folder="static")
 
 # l.info("Im Ready !")
 
