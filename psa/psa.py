@@ -23,33 +23,18 @@ def index():
 
 
 
-@psa.route('/api/exchange-price/<system_idx>/<country_src_idx>/<currency_src>/<country_dst_idx>/<currency_dst>/<amount>', methods=["GET"])
-def exchange_price(system_idx, country_src_idx, currency_src, country_dst_idx, currency_dst, amount):
-    with request:
-        if int(system_idx) == 0:
-            contact = PaySystemsPrice(system_idx, country_src_idx, currency_src, country_dst_idx, currency_dst, amount)
-            return jsonify(contact.get_dict())
-        if int(system_idx) == 1:
-            unistream = PaySystemsPrice(system_idx, country_src_idx, currency_src, country_dst_idx, currency_dst, amount)
-            return jsonify(unistream.get_dict())
-        if int(system_idx) == 2:
-            koronapay = PaySystemsPrice(int(system_idx), int(country_src_idx), currency_src, int(country_dst_idx), currency_dst, int(amount))
-            return jsonify(koronapay.get_dict())
-        
-        if int(system_idx) == 6: 
+@psa.route('/api/exchange-price/<system>/<country_src>/<currency_src>/<country_dst>/<currency_dst>/<amount>', methods=["GET"])
+def exchange_price(system, country_src, currency_src, country_dst, currency_dst, amount):
+    with request:        
+        if system == "all": 
             data = {}
-            system_idx = [0, 1, 2]
-            for idx in system_idx:
-                if int(idx) == 0:
-                    koronapay = PaySystemsPrice(int(idx), country_src_idx, currency_src, country_dst_idx, currency_dst, amount)
-                if int(idx) == 2:
-                    contact = PaySystemsPrice(int(idx), country_src_idx, currency_src, country_dst_idx, currency_dst, amount)
-                if int(idx) == 1:
-                    unistream = PaySystemsPrice(int(idx), country_src_idx, currency_src, country_dst_idx, currency_dst, amount)
-            data["koronapay"] = jsonify(koronapay.get_dict())
-            data["contact"] = jsonify(contact.get_dict())
-            data["unistream"] = jsonify(unistream.get_dict())
+            for system in PaySystemsPrice.SYSTEMS:
+                result = PaySystemsPrice(system, country_src, currency_src, country_dst, currency_dst, amount)
+                data[system] = jsonify(result.get_dict())
             return jsonify(data)
+        else:
+            system = PaySystemsPrice(system, country_src, currency_src, country_dst, currency_dst, amount)        
+            return jsonify(system.get_dict())
 
 
 @psa.route("/user_ip", methods=["GET"])
