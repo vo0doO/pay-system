@@ -5,13 +5,13 @@ from utils.koronapay import koronapay
 from utils.unistream import unistream
 from utils.contact import contact
 from subprocess import getoutput
-# import logging
-# from settings.logging import LOGGING
-# import logging.config
+import logging
+from settings import LOGGING
+import logging.config
 
 
-# logging.config.dictConfig(LOGGING)
-# l = logging.getLogger("my_logger")
+logging.config.dictConfig(LOGGING)
+l = logging.getLogger("my_logger")
 
 class PaySystemsPrice:
     """Класс имеющий методы для возвращаюшие стоимость
@@ -97,7 +97,7 @@ class PaySystemsPrice:
                 if (self.system == "contact"):
                     prices = dict(eval(getoutput(self.command())))["result"]
                     for item in prices:
-                        if (item["from"] != self.country_src["CDI"]) or (self.country_dst["CDI"] != "840"):
+                        if (item["from"] != str(self.currency_src["CID"])) or (item["to"] != str(self.currency_dst["CID"])):
                             continue
                         price = item["rate"]
                         break

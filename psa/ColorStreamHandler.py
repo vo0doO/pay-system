@@ -1,4 +1,7 @@
 import curses
+from logging.handlers import SysLogHandler
+import sys
+from threading import Thread
 import time
 DEBUG = True 					# Whether or not to show DEBUG level messages
 INFO = True
@@ -9,6 +12,7 @@ import os
 class ColorStreamHandler(logging.StreamHandler):
 
 	def __init__(self, use_colors):
+		super.__init__(self=sys.stdout)
 		logging.Handler.__init__(self)
 		self.use_colors = use_colors
 

@@ -1,14 +1,12 @@
 import time
 import os
-DEBUG = True 					# Whether or not to show DEBUG level messages
-USE_COLORS = True 				# Whether or not colors should be used when outputting text
-EMAILS_FILENAME = 'data/emails.csv'
-DOMAINS_FILENAME = 'data/domains.csv'
+DEBUG = True 					# Показывать или нет сообщения уровня DEBUG
+USE_COLORS = True 				# Следует ли использовать цвета при выводе текста
 ADDONS_INFO_FILENAME = 'link_for_crawler.txt'
-import logging.handlers
-LOGGING = {						# dictConfig for output stream and file logging
+
+LOGGING = {						# dictConfig для выходного потока и ведения журнала файлов
 	'version': 1,              
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
 
 	'formatters': {
 		'console': {

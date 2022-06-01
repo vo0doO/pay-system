@@ -8,13 +8,12 @@ from settings import LOGGING
 from flask import Flask, render_template, ctx, render_template_string, request, redirect, url_for, jsonify
 
 
-# logging.config.dictConfig(LOGGING)
-# l = logging.getLogger("my_logger")
+logging.config.dictConfig(LOGGING)
+l = logging.getLogger("my_logger")
 
 
 psa = Flask(__name__, template_folder="templates", static_url_path="/static", static_folder="static")
 
-# l.info("Im Ready !")
 
 @psa.route("/", methods=["GET"])
 def index():
@@ -27,11 +26,15 @@ def index():
 def exchange_price(system, country_src, currency_src, country_dst, currency_dst, amount):
     with request:        
         if system == "all": 
-            data = {}
-            for system in PaySystemsPrice.SYSTEMS:
-                result = PaySystemsPrice(system, country_src, currency_src, country_dst, currency_dst, amount)
-                data[system] = jsonify(result.get_dict())
-            return jsonify(data)
+            try:
+                data = {}
+                for system in PaySystemsPrice.SYSTEMS:
+                    result = PaySystemsPrice(system, country_src, currency_src, country_dst, currency_dst, amount)
+                    data[system] = result.get_dict()
+                return jsonify(data)
+            except Exception as error:
+                l.error(error)
+
         else:
             system = PaySystemsPrice(system, country_src, currency_src, country_dst, currency_dst, amount)        
             return jsonify(system.get_dict())
@@ -51,7 +54,8 @@ def get_user_ip():
 
 if __name__ == '__main__':
 
-
+    l.debug("Im Ready !")
+    l.info("Im Ready !")
     port = int(os.environ.get('PORT', 5005))
     psa.testing = True
     client = psa.test_client(5000)

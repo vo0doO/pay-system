@@ -57,6 +57,14 @@
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
             ]
+        },
+        {
+            "name": "Python: Текущий файл",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ],
     "compounds": [
