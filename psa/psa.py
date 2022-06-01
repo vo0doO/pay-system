@@ -9,7 +9,7 @@ from flask import Flask, render_template, ctx, render_template_string, request, 
 
 
 logging.config.dictConfig(LOGGING)
-l = logging.getLogger("my_logger")
+l = logging.getLogger("crawler_logger")
 
 
 psa = Flask(__name__, template_folder="templates", static_url_path="/static", static_folder="static")
@@ -17,6 +17,8 @@ psa = Flask(__name__, template_folder="templates", static_url_path="/static", st
 
 @psa.route("/", methods=["GET"])
 def index():
+    l.debug("Im Ready !")
+    l.info("Im Ready !")
     with request:
         return render_template("index.html")
 
@@ -54,8 +56,7 @@ def get_user_ip():
 
 if __name__ == '__main__':
 
-    l.debug("Im Ready !")
-    l.info("Im Ready !")
+
     port = int(os.environ.get('PORT', 5005))
     psa.testing = True
     client = psa.test_client(5000)

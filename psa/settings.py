@@ -1,10 +1,12 @@
 import time
-import os
-DEBUG = True 					# Показывать или нет сообщения уровня DEBUG
-USE_COLORS = True 				# Следует ли использовать цвета при выводе текста
+DEBUG = True 					# Whether or not to show DEBUG level messages
+USE_COLORS = True 				# Whether or not colors should be used when outputting text
+EMAILS_FILENAME = 'data/emails.csv'
+DOMAINS_FILENAME = 'data/domains.csv'
 ADDONS_INFO_FILENAME = 'link_for_crawler.txt'
-
-LOGGING = {						# dictConfig для выходного потока и ведения журнала файлов
+import ColorStreamHandler
+import logging
+LOGGING = {						# dictConfig for output stream and file logging
 	'version': 1,              
     'disable_existing_loggers': False,
 
@@ -18,23 +20,22 @@ LOGGING = {						# dictConfig для выходного потока и веде
 	},
 
 	'handlers': {
-     	'file': {
-			'class': 'logging.handlers.RotatingFileHandler',
-			'formatter':'file',
-			'level': 'DEBUG',
-			'filename': 'pycrawler.log',
-		},
 		'console': {
 			'class': 'ColorStreamHandler.ColorStreamHandler',
 			'formatter':'console',
-			'level': 'INFO',
+			'level': 'DEBUG',
 			'use_colors': USE_COLORS,
 		},
-
+		'file': {
+			'class': 'logging.handlers.RotatingFileHandler',
+			'formatter':'file',
+			'level': 'INFO',
+			'filename': './pycrawler.log',
+		},
 	},
 
 	'loggers': {
-		'log': {
+		'crawler_logger': {
 			'handlers': ['console', 'file'],
 			'level': 'DEBUG' if DEBUG else 'INFO',
 			'propagate': True,

@@ -11,7 +11,7 @@ import logging.config
 
 
 logging.config.dictConfig(LOGGING)
-l = logging.getLogger("my_logger")
+l = logging.getLogger("crawler_logger")
 
 class PaySystemsPrice:
     """Класс имеющий методы для возвращаюшие стоимость

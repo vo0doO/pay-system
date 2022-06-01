@@ -1,18 +1,9 @@
-import curses
-from logging.handlers import SysLogHandler
-import sys
-from threading import Thread
-import time
-DEBUG = True 					# Whether or not to show DEBUG level messages
-INFO = True
-USE_COLORS = True 				# Whether or not colors should be used when outputting text
 import logging
-import os
+import curses
 
-class ColorStreamHandler(logging.StreamHandler):
+class ColorStreamHandler(logging.Handler):
 
 	def __init__(self, use_colors):
-		super.__init__(self=sys.stdout)
 		logging.Handler.__init__(self)
 		self.use_colors = use_colors
 
@@ -44,6 +35,7 @@ class ColorStreamHandler(logging.StreamHandler):
 			return msg
 	
 	def emit(self, record):
+		record.msg = record.msg.encode('utf-8', 'ignore')
 		msg = self.format(record)
 
 		# Это просто удаляет дату и миллисекунды из asctime
@@ -53,7 +45,6 @@ class ColorStreamHandler(logging.StreamHandler):
 		if self.use_colors:
 			msg = self.color(msg, record.levelname)
 		print(msg)
-
 
 # 'record' имеет следующие атрибуты:
 # threadName
