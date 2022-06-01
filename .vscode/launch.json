@@ -11,14 +11,6 @@
         },
         {
             "console": "integratedTerminal",
-            "type": "chrome",
-            "request": "attach",
-            "name": "Attach to Chrome",
-            "port": 9222,
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "name": "Node",
             "request": "launch",

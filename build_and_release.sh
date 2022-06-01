@@ -2,16 +2,15 @@
 # -*- coding: utf-8 -*-
 
 login_on_heroku() {
-    bash -c "heroku container:login"
+    heroku container:login
 }
 
 release_on_heroku() {
-    bash -c "heroku container:release web"
+    heroku container:release web -a pay-systems
 }
-
 
 build_image_on_heroku() {
-    bash -c "heroku container:push web"
+    heroku container:push web -a pay-systems
 }
 # heroku container:push web && heroku container:release web
-build_image_on_heroku && release_on_heroku
+login_on_heroku && uild_image_on_heroku && release_on_heroku
