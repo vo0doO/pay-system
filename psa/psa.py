@@ -8,8 +8,8 @@ from settings import LOGGING
 from flask import Flask, render_template, ctx, render_template_string, request, redirect, url_for, jsonify
 
 
-logging.config.dictConfig(LOGGING)
-l = logging.getLogger("crawler_logger")
+# logging.config.dictConfig(LOGGING)
+# l = logging.getLogger("crawler_logger")
 
 
 psa = Flask(__name__, template_folder="templates", static_url_path="/static", static_folder="static")
