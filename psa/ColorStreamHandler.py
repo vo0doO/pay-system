@@ -1,5 +1,6 @@
 import logging
 import curses
+import sys
 
 class ColorStreamHandler(logging.Handler):
 
