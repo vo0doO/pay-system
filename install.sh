@@ -6,3 +6,5 @@ setup() {
     curl https://cli-assets.heroku.com/install.sh | sh && \
     heroku container:login
 }
+
+setup
