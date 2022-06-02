@@ -59,5 +59,25 @@
     "python.defaultInterpreterPath": "/.venv/bin/python",
     "cSpell.ignoreWords": [
         "системам"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#c2ebb5",
+        "activityBar.activeBorder": "#8298dd",
+        "activityBar.background": "#c2ebb5",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#8298dd",
+        "activityBarBadge.foreground": "#15202b",
+        "sash.hoverBorder": "#c2ebb5",
+        "statusBar.background": "#a1e08d",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#80d565",
+        "statusBarItem.remoteBackground": "#a1e08d",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#a1e08d",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#a1e08d99",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.remoteColor": "#a1e08d"
 }
