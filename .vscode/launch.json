@@ -31,7 +31,7 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "psa/psa",
+                "FLASK_APP": "psa",
                 "FLASK_ENV": "development"
             },
             "args": [

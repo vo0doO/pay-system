@@ -1,4 +1,4 @@
-from psa import psa
+from . import psa
 
 import os
 import unittest

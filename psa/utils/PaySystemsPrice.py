@@ -1,17 +1,10 @@
 import time, datetime
 
 from flask import request
-from utils.koronapay import koronapay
-from utils.unistream import unistream
-from utils.contact import contact
+from .koronapay import koronapay
+from .unistream import unistream
+from .contact import contact
 from subprocess import getoutput
-import logging
-from settings import LOGGING
-import logging.config
-
-
-# logging.config.dictConfig(LOGGING)
-# l = logging.getLogger("crawler_logger")
 
 class PaySystemsPrice:
     """Класс имеющий методы для возвращаюшие стоимость
