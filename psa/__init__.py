@@ -34,7 +34,7 @@ def create_app(test_config=None):
             with request:
                 return render_template("index.html")
         except Exception as error:
-            l.error(error)
+            print(error)
 
     @psa.route('/api/exchange-price/<system>/<country_src>/<currency_src>/<country_dst>/<currency_dst>/<amount>', methods=["GET"])
     def exchange_price(system, country_src, currency_src, country_dst, currency_dst, amount):
@@ -47,7 +47,7 @@ def create_app(test_config=None):
                         data[system] = result.get_dict()
                     return jsonify(data)
                 except Exception as error:
-                    l.error(error)
+                    print(error)
 
             else:
                 system = PaySystemsPrice(system, country_src, currency_src, country_dst, currency_dst, amount)        
